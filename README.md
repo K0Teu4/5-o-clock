@@ -6,6 +6,8 @@ minimalist city postcards, each keeping its own local time.
 
 **Live:** https://k0teu4.github.io/5-o-clock/
 
+**Status:** ❄️ frozen — final edition of eight postcards, sealed on September 13, 2026. No further additions planned.
+
 ## The series
 
 01 London · 02 Tokyo · 03 Paris · 04 Istanbul
