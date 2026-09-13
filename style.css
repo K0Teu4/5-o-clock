@@ -1,0 +1,113 @@
+:root{
+  --red:#E4432C; --ink:#221E4E; --paper:#F5F0DC; --hi:#FFD2C2;
+  /* день */
+  --sky:#E4432C; --disc:#F5F0DC; --a:#221E4E; --b:#F5F0DC; --bL:#DCD6C0;
+  --tr:#F26A4B; --tri:#221E4E; --on-a:#F5F0DC;
+  --dial:#221E4E; --dialline:#F5F0DC; --edge:#F5F0DC;
+}
+html[data-phase="morning"]{
+  --sky:#F5F0DC; --disc:#E4432C; --a:#221E4E; --b:#E4432C; --bL:#C4331F;
+  --tr:#E4432C; --tri:#221E4E; --on-a:#F5F0DC;
+  --dial:#F5F0DC; --dialline:#221E4E; --edge:#F5F0DC;
+}
+html[data-phase="evening"]{
+  --sky:#7E2F4F; --disc:#F2A65A; --a:#221E4E; --b:#F5F0DC; --bL:#DCD6C0;
+  --tr:#E4432C; --tri:#221E4E; --on-a:#F5F0DC;
+  --dial:#221E4E; --dialline:#F5F0DC; --edge:#F5F0DC;
+}
+html[data-phase="night"]{
+  --sky:#221E4E; --disc:#F5F0DC; --a:#F5F0DC; --b:#F5F0DC; --bL:#DCD6C0;
+  --tr:#E4432C; --tri:#E4432C; --on-a:#221E4E;
+  --dial:#221E4E; --dialline:#F5F0DC; --edge:#221E4E;
+}
+*{margin:0;box-sizing:border-box}
+body{font-family:Georgia,serif;background:var(--paper);color:var(--ink)}
+svg *{transition:fill .8s, stroke .8s}
+
+/* башня: свет справа */
+.sky{fill:var(--sky)} .disc{fill:var(--disc)}
+.a{fill:var(--a)} .b{fill:var(--b)} .bL{fill:var(--bL)} .tr{fill:var(--tr)}
+.tri{fill:var(--tri)} .wl{fill:var(--paper)}
+html[data-phase="night"] .wl{fill:#221E4E}
+.stroke-a{stroke:var(--a);stroke-width:6}
+.edge{stroke:var(--edge);stroke-width:3}
+.hi{fill:none;stroke:var(--hi);stroke-width:3;stroke-linecap:round}
+.occ{fill:#14123A;opacity:.22}
+.occ-s{stroke:#14123A;stroke-width:3;opacity:.35}
+.dial{fill:var(--dial)}
+.ring{fill:none;stroke:var(--dialline);stroke-width:4}
+.ticks{fill:none;stroke:var(--dialline);stroke-width:5;stroke-dasharray:4 15.9}
+.hand{stroke:var(--dialline);stroke-linecap:round}
+.dialL{fill:none;stroke:var(--on-a);stroke-width:4}
+.ticksL{fill:none;stroke:var(--on-a);stroke-width:5;stroke-dasharray:4 12}
+.handL{stroke:var(--on-a);stroke-linecap:round}
+
+/* открытки: одна бумага, одно перо, один шрифт */
+.f-sage{fill:#8FBFB1} .f-salmon{fill:#E85A5A} .f-pink{fill:#F4A7B0}
+.f-mow{fill:#A6C3D9} .f-bei{fill:#E9C46A} .f-nyk{fill:#B5A8C9}
+.f-rom{fill:#C97B63} .f-ist{fill:#6FB5A8}
+.keyline{fill:none;stroke:#221E4E;stroke-width:1.5;opacity:.5}
+.s-ink{fill:none;stroke:#221E4E;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.s-thin{fill:none;stroke:#221E4E;stroke-width:2;stroke-linecap:round}
+.cardtext{text-anchor:middle;fill:#221E4E;font-family:'Playfair Display',Georgia,serif}
+.cardtext.country{font-size:16px;letter-spacing:6px;font-weight:600}
+.cardtext.city{font-size:30px;letter-spacing:8px;font-weight:700}
+.cardtext.city-sm{font-size:26px}
+.cardtext.num{font-size:11px;opacity:.55}
+.cap{font-family:Georgia,serif}
+
+/* первый экран */
+.hero{position:relative;height:100vh;overflow:hidden;background:var(--sky)}
+.hero>svg{position:absolute;inset:0;width:100%;height:100%}
+.hero-txt{position:absolute;left:6vw;bottom:9vh;max-width:min(560px,46vw);
+  background:var(--a);color:var(--on-a);padding:1.2rem 1.8rem;
+  clip-path:polygon(0 8%,100% 0,100% 92%,0 100%);transition:background .8s,color .8s}
+.hero-txt h1{font-size:clamp(2rem,5vw,4rem);letter-spacing:.06em;line-height:1.05}
+
+#tea{display:none;position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);z-index:9;
+  background:var(--paper);color:var(--ink);padding:.8rem 1.6rem;border:3px solid var(--ink);
+  max-width:90vw;text-align:center}
+body.tea #tea{display:block}
+
+/* открытки: четыре в ряд */
+section{padding:5rem 8vw}
+h2{font-size:2rem;margin-bottom:1rem}
+.lead{margin-bottom:2.5rem}
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.5rem}
+@media (min-width:1100px){.works{grid-template-columns:repeat(4,1fr)}}
+.postcard{border:3px solid var(--ink);background:var(--paper);transition:transform .25s ease}
+.postcard:nth-child(1){transform:rotate(-1.5deg)}
+.postcard:nth-child(2){transform:rotate(1.5deg)}
+.postcard:nth-child(3){transform:rotate(-1deg)}
+.postcard:nth-child(4){transform:rotate(1.2deg)}
+.postcard:nth-child(5){transform:rotate(-1.2deg)}
+.postcard:nth-child(6){transform:rotate(.8deg)}
+.postcard:nth-child(7){transform:rotate(-.8deg)}
+.postcard:nth-child(8){transform:rotate(1.4deg)}
+.postcard:hover{transform:rotate(0deg) translateY(-6px)}
+.postcard svg{display:block;width:100%;height:auto}
+.cap{display:flex;justify-content:space-between;padding:.7rem 1rem;font-size:1.15rem}
+
+/* подвал */
+footer{background:var(--ink);color:var(--paper);padding:5rem 8vw 3rem;
+  clip-path:polygon(0 12%,100% 0,100% 100%,0 100%)}
+footer p{max-width:60ch;margin:.4rem 0}
+.mail{display:inline-flex;gap:.6rem;align-items:baseline;margin:1.2rem 0;padding:.9rem 2rem;
+  background:var(--red);color:var(--paper);font-size:1.2rem;font-family:Georgia,serif;
+  border:none;cursor:pointer;clip-path:polygon(0 12%,100% 0,100% 88%,0 100%);
+  transition:transform .15s, background .3s}
+.mail:hover{background:#F26A4B;transform:translateY(-2px)}
+.mail:active{transform:translateY(0)}
+.mail:focus-visible{outline:3px solid var(--paper);outline-offset:4px}
+.mail-hint{font-size:.95rem;opacity:.85}
+.addr{opacity:.75;font-size:.95rem}
+footer small{display:block;margin-top:2.5rem;opacity:.7}
+
+/* печать: лист открыток */
+@media print{
+  #tea,.mail,.addr,.lead,footer,.hero{display:none}
+  body{background:#fff}
+  section{padding:1rem}
+  .works{grid-template-columns:repeat(4,1fr);gap:1rem}
+  .postcard{transform:none;break-inside:avoid;border-width:2px}
+}

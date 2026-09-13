@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ru" data-phase="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Five o'clock — пять часов</title>
+  <meta name="description" content="Five o'clock — серия графических открыток: восемь городов, и каждый идёт по своим часам.">
+  <meta property="og:title" content="Five o'clock">
+  <meta property="og:description" content="Восемь городов, восемь открыток: каждая идёт по своим часам.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#E4432C">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23E4432C'/%3E%3Ccircle cx='32' cy='32' r='20' fill='%23221E4E' stroke='%23F5F0DC' stroke-width='3'/%3E%3Cline x1='32' y1='32' x2='32' y2='19' stroke='%23F5F0DC' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='32' y1='32' x2='37' y2='41' stroke='%23F5F0DC' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="tea">🫖 В Лондоне ровно пять: <span id="ldn2"></span>. Начинается вечер — работа подождёт, завариваем чай.</div>
+
+<header class="hero">
+  <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-label="Постер: часовая башня">
+    <rect class="sky" width="1600" height="900"/>
+    <circle class="disc" cx="1300" cy="170" r="90"/>
+    <polygon class="b" points="0,830 1600,300 1600,470 0,1000"/>
+    <g transform="translate(392,50) scale(0.68)">
+      <line class="stroke-a" x1="600" y1="28" x2="600" y2="60"/>
+      <circle class="a" cx="600" cy="24" r="8"/>
+      <path class="a" d="M600,60 C586,180 548,320 490,440 L600,440 Z"/>
+      <path class="b" d="M600,60 C614,180 652,320 730,440 L600,440 Z"/>
+      <line class="stroke-a" x1="476" y1="372" x2="476" y2="440"/><circle class="a" cx="476" cy="366" r="7"/>
+      <line class="stroke-a" x1="734" y1="372" x2="734" y2="440"/><circle class="a" cx="734" cy="366" r="7"/>
+      <rect class="a" x="470" y="440" width="130" height="16"/>
+      <rect class="b" x="600" y="440" width="140" height="16"/>
+      <rect class="a"  x="490" y="456" width="110" height="150"/>
+      <rect class="tr" x="600" y="456" width="130" height="150"/>
+      <rect class="occ" x="490" y="456" width="110" height="12"/>
+      <rect class="occ" x="600" y="456" width="130" height="12"/>
+      <g>
+        <ellipse class="dialL"  cx="545" cy="531" rx="34" ry="46"/>
+        <ellipse class="ticksL" cx="545" cy="531" rx="26" ry="37"/>
+        <g transform="translate(545,531) scale(.78,1)">
+          <line id="hL" class="handL" x1="0" y1="0" x2="0" y2="-24" stroke-width="5"/>
+          <line id="mL" class="handL" x1="0" y1="0" x2="0" y2="-36" stroke-width="3"/>
+        </g>
+      </g>
+      <g>
+        <circle class="dial"  cx="665" cy="531" r="46"/>
+        <circle class="ring"  cx="665" cy="531" r="46"/>
+        <circle class="ticks" cx="665" cy="531" r="38"/>
+        <g transform="translate(665,531)">
+          <line id="hR" class="hand" x1="0" y1="0" x2="0" y2="-25" stroke-width="5"/>
+          <line id="mR" class="hand" x1="0" y1="0" x2="0" y2="-36" stroke-width="3"/>
+        </g>
+      </g>
+      <rect class="bL" x="490" y="606" width="110" height="14"/>
+      <rect class="b"  x="600" y="606" width="130" height="14"/>
+      <rect class="a"  x="490" y="620" width="110" height="630"/>
+      <rect class="tr" x="600" y="620" width="130" height="630"/>
+      <rect class="occ" x="490" y="620" width="110" height="12"/>
+      <rect class="occ" x="600" y="620" width="130" height="12"/>
+      <g class="wl">
+        <rect x="499" y="634" width="12" height="34" rx="6"/><rect x="519" y="634" width="12" height="34" rx="6"/>
+        <rect x="539" y="634" width="12" height="34" rx="6"/><rect x="559" y="634" width="12" height="34" rx="6"/>
+        <rect x="579" y="634" width="12" height="34" rx="6"/>
+        <rect x="499" y="690" width="14" height="560"/><rect x="525" y="690" width="14" height="560"/>
+        <rect x="551" y="690" width="14" height="560"/><rect x="577" y="690" width="14" height="560"/>
+      </g>
+      <g class="b">
+        <rect x="609" y="634" width="12" height="34" rx="6"/><rect x="629" y="634" width="12" height="34" rx="6"/>
+        <rect x="649" y="634" width="12" height="34" rx="6"/><rect x="669" y="634" width="12" height="34" rx="6"/>
+        <rect x="689" y="634" width="12" height="34" rx="6"/><rect x="709" y="634" width="12" height="34" rx="6"/>
+        <rect x="606" y="690" width="14" height="560"/><rect x="632" y="690" width="14" height="560"/>
+        <rect x="658" y="690" width="14" height="560"/><rect x="684" y="690" width="14" height="560"/>
+        <rect x="710" y="690" width="14" height="560"/>
+      </g>
+      <line class="edge" x1="600" y1="60" x2="600" y2="1250"/>
+      <path class="hi" d="M600,60 C614,180 652,320 730,440"/>
+      <line class="hi" x1="730" y1="456" x2="730" y2="1250"/>
+      <line class="occ-s" x1="490" y1="440" x2="490" y2="1250"/>
+    </g>
+    <polygon class="tri" points="520,900 1600,500 1600,900"/>
+  </svg>
+  <div class="hero-txt">
+    <h1>FIVE O'CLOCK</h1>
+    <p>лондонское время · <span id="ldn"></span> · <span id="phase"></span></p>
+  </div>
+</header>
+
+<section class="cards">
+  <h2>Открытки</h2>
+  <p class="lead">Восемь городов — и ни один не живёт по чужим часам.</p>
+  <div class="works">
+    <figure class="postcard">
+      <svg viewBox="0 0 300 400" aria-label="Лондон">
+        <rect class="f-sage" width="300" height="400"/>
+        <rect class="keyline" x="10" y="10" width="280" height="380"/>
+        <text class="cardtext country" x="150" y="44">UNITED KINGDOM</text>
+        <text class="cardtext num" x="270" y="44">01</text>
+        <g class="s-ink">
+          <line x1="150" y1="54" x2="150" y2="68"/>
+          <path d="M150,68 L137,116 L163,116 Z"/>
+          <rect x="133" y="116" width="34" height="14"/>
+          <path d="M133,130 L127,158 L173,158 L167,130"/>
+          <rect x="125" y="158" width="50" height="54"/>
+          <rect x="131" y="164" width="38" height="42"/>
+          <circle cx="150" cy="185" r="15"/>
+          <circle cx="150" cy="185" r="10"/>
+          <line x1="129" y1="212" x2="171" y2="212"/>
+          <line x1="131" y1="212" x2="131" y2="320"/>
+          <line x1="169" y1="212" x2="169" y2="320"/>
+          <line x1="118" y1="320" x2="182" y2="320"/>
+        </g>
+        <g class="s-thin">
+          <line x1="150" y1="185" x2="150" y2="177"/>
+          <line x1="150" y1="185" x2="156" y2="182"/>
+          <line x1="139" y1="224" x2="139" y2="262"/><line x1="146" y1="224" x2="146" y2="262"/>
+          <line x1="153" y1="224" x2="153" y2="262"/><line x1="160" y1="224" x2="160" y2="262"/>
+          <line x1="139" y1="274" x2="139" y2="312"/><line x1="146" y1="274" x2="146" y2="312"/>
+          <line x1="153" y1="274" x2="153" y2="312"/><line x1="160" y1="274" x2="160" y2="312"/>
+        </g>
+        <text class="cardtext city" x="150" y="376">LONDON</text>
+        <line x1="118" y1="390" x2="182" y2="390" class="s-ink"/>
+      </svg>
+      <figcaption class="cap"><span>Лондон</span><span id="tLn">--:--</span></figcaption>
+    </figure>
+    <figure class="postcard">
+      <svg viewBox="0 0 300 400" aria-label="Париж">
+        <rect class="f-salmon" width="300" height="400"/>
+        <rect class="keyline" x="10" y="10" width="280" height="380"/>
+        <text class="cardtext country" x="150" y="44">FRANCE</text>
+        <text class="cardtext num" x="270" y="44">02</text>
+        <g class="s-ink">
+          <path d="M108,320 C124,272 136,232 141,196 L136,196 L136,189 L142,189
+                   C145,150 147,110 148,74 L150,58 L152,74
+                   C153,110 155,150 158,189 L164,189 L164,196 L159,196
+                   C164,232 176,272 192,320 Z"/>
+          <path d="M126,320 C134,282 166,282 174,320"/>
+          <line x1="132" y1="200" x2="168" y2="200"/>
+          <line x1="122" y1="252" x2="178" y2="252"/>
+          <line x1="146" y1="90"  x2="154" y2="90"/>
+        </g>
+        <text class="cardtext city" x="150" y="376">PARIS</text>
+        <line x1="118" y1="390" x2="182" y2="390" class="s-ink"/>
+      </svg>
+      <figcaption class="cap"><span>Париж</span><span id="tPr">--:--</span></figcaption>
+    </figure>
+    <figure class="postcard">
+      <svg viewBox="0 0 300 400" aria-label="Токио">
+        <rect class="f-pink" width="300" height="400"/>
+        <rect class="keyline" x="10" y="10" width="280" height="380"/>
+        <text class="cardtext country" x="150" y="44">JAPAN</text>
+        <text class="cardtext num" x="270" y="44">03</text>
+        <g class="s-ink">
+          <path d="M64,146 C110,134 190,134 236,146"/>
+          <path d="M70,158 C112,146 188,146 230,158"/>
+          <line x1="64" y1="146" x2="70" y2="158"/>
+          <line x1="236" y1="146" x2="230" y2="158"/>
+          <line x1="64" y1="146" x2="52" y2="138"/>
+          <line x1="236" y1="146" x2="248" y2="138"/>
+          <rect x="74" y="162" width="152" height="10"/>
+          <rect x="145" y="172" width="10" height="34"/>
+          <rect x="80" y="206" width="140" height="12"/>
+          <line x1="106" y1="172" x2="105" y2="206"/>
+          <line x1="117" y1="172" x2="116" y2="206"/>
+          <line x1="183" y1="172" x2="184" y2="206"/>
+          <line x1="194" y1="172" x2="195" y2="206"/>
+          <polygon points="104,218 118,218 112,308 98,308"/>
+          <polygon points="182,218 196,218 202,308 188,308"/>
+          <rect x="94" y="308" width="26" height="12"/>
+          <rect x="180" y="308" width="26" height="12"/>
+          <line x1="92" y1="320" x2="208" y2="320"/>
+        </g>
+        <text class="cardtext city" x="150" y="376">TOKYO</text>
+        <line x1="118" y1="390" x2="182" y2="390" class="s-ink"/>
+      </svg>
+      <figcaption class="cap"><span>Токио</span><span id="tTk">--:--</span></figcaption>
+    </figure>
+    <figure class="postcard">
+      <svg viewBox="0 0 300 400" aria-label="Москва">
+        <rect class="f-mow" width="300" height="400"/>
+        <rect class="keyline" x="10" y="10" width="280" height="380"/>
+        <text class="cardtext country" x="150" y="44">RUSSIA</text>
+        <text class="cardtext num" x="270" y="44">04</text>
+        <g class="s-ink">
+          <line x1="105" y1="320" x2="195" y2="320"/>
+          <rect x="122" y="200" width="56" height="120"/>
+          <circle cx="150" cy="238" r="16"/>
+          <rect x="128" y="180" width="44" height="20"/>
+          <path d="M150,105 L126,180 L174,180 Z"/>
+          <rect x="144" y="92" width="12" height="13"/>
+          <polygon points="150,69 152.35,75.76 159.5,75.9 153.8,80.24 155.9,87.1 150,83 144.1,87.1 146.2,80.24 140.5,75.9 147.65,75.76"/>
+          <path d="M140,320 C140,300 160,300 160,320"/>
+        </g>
+        <g class="s-thin">
+          <circle cx="150" cy="238" r="10"/>
+          <line x1="150" y1="238" x2="150" y2="229"/>
+          <line x1="150" y1="238" x2="156" y2="241"/>
+          <line x1="134" y1="268" x2="134" y2="304"/>
+          <line x1="166" y1="268" x2="166" y2="304"/>
+        </g>
+        <text class="cardtext city" x="150" y="376">MOSCOW</text>
+        <line x1="118" y1="390" x2="182" y2="390" class="s-ink"/>
+      </svg>
+      <figcaption class="cap"><span>Москва</span><span id="tMs">--:--</span></figcaption>
+    </figure>
+    <figure class="postcard">
+      <svg viewBox="0 0 300 400" aria-label="Пекин">
+        <rect class="f-bei" width="300" height="400"/>
+        <rect class="keyline" x="10" y="10" width="280" height="380"/>
+        <text class="cardtext country" x="150" y="44">CHINA</text>
+        <text class="cardtext num" x="270" y="44">05</text>
+        <g class="s-ink">
+          <line x1="90" y1="320" x2="210" y2="320"/>
+          <rect x="104" y="304" width="92" height="16"/>
+          <rect x="112" y="288" width="76" height="16"/>
+          <rect x="122" y="252" width="56" height="36"/>
+          <path d="M104,250 C128,232 172,232 196,250"/>
+          <line x1="124" y1="250" x2="124" y2="224"/>
+          <line x1="176" y1="250" x2="176" y2="224"/>
+          <path d="M114,222 C136,206 164,206 186,222"/>
+          <line x1="132" y1="222" x2="132" y2="194"/>
+          <line x1="168" y1="222" x2="168" y2="194"/>
+          <path d="M126,192 C140,180 160,180 174,192"/>
+          <line x1="140" y1="192" x2="140" y2="178"/>
+          <line x1="160" y1="192" x2="160" y2="178"/>
+          <line x1="150" y1="178" x2="150" y2="168"/>
+          <circle cx="150" cy="164" r="3.5"/>
+        </g>
+        <g class="s-thin">
+          <line x1="134" y1="256" x2="134" y2="284"/>
+          <line x1="150" y1="256" x2="150" y2="284"/>
+          <line x1="166" y1="256" x2="166" y2="284"/>
+        </g>
+        <text class="cardtext city" x="150" y="376">BEIJING</text>
+        <line x1="118" y1="390" x2="182" y2="390" class="s-ink"/>
+      </svg>
+      <figcaption class="cap"><span>Пекин</span><span id="tBj">--:--</span></figcaption>
+    </figure>
+    <figure class="postcard">
+      <svg viewBox="0 0 300 400" aria-label="Нью-Йорк">
+        <rect class="f-nyk" width="300" height="400"/>
+        <rect class="keyline" x="10" y="10" width="280" height="380"/>
+        <text class="cardtext country" x="150" y="44">UNITED STATES</text>
+        <text class="cardtext num" x="270" y="44">06</text>
+        <g class="s-ink">
+          <line x1="100" y1="320" x2="200" y2="320"/>
+          <rect x="116" y="258" width="68" height="62"/>
+          <rect x="124" y="214" width="52" height="44"/>
+          <rect x="132" y="172" width="36" height="42"/>
+          <rect x="142" y="138" width="16" height="34"/>
+          <line x1="150" y1="102" x2="150" y2="138"/>
+        </g>
+        <g class="s-thin">
+          <line x1="132" y1="268" x2="132" y2="312"/><line x1="146" y1="268" x2="146" y2="312"/>
+          <line x1="160" y1="268" x2="160" y2="312"/><line x1="174" y1="268" x2="174" y2="312"/>
+          <line x1="138" y1="222" x2="138" y2="250"/><line x1="150" y1="222" x2="150" y2="250"/>
+          <line x1="162" y1="222" x2="162" y2="250"/>
+          <line x1="144" y1="180" x2="144" y2="206"/><line x1="156" y1="180" x2="156" y2="206"/>
+        </g>
+        <text class="cardtext city city-sm" x="150" y="376">NEW YORK</text>
+        <line x1="118" y1="390" x2="182" y2="390" class="s-ink"/>
+      </svg>
+      <figcaption class="cap"><span>Нью-Йорк</span><span id="tNy">--:--</span></figcaption>
+    </figure>
+    <figure class="postcard">
+      <svg viewBox="0 0 300 400" aria-label="Рим">
+        <rect class="f-rom" width="300" height="400"/>
+        <rect class="keyline" x="10" y="10" width="280" height="380"/>
+        <text class="cardtext country" x="150" y="44">ITALY</text>
+        <text class="cardtext num" x="270" y="44">07</text>
+        <g class="s-ink">
+          <line x1="88" y1="320" x2="212" y2="320"/>
+          <path d="M96,320 L96,262 C120,248 180,248 204,262 L204,320"/>
+          <path d="M100,274 C124,262 176,262 200,274"/>
+        </g>
+        <g class="s-thin">
+          <path d="M112,314 L112,290 C112,282 124,282 124,290 L124,314"/>
+          <path d="M128,314 L128,290 C128,282 140,282 140,290 L140,314"/>
+          <path d="M144,314 L144,290 C144,282 156,282 156,290 L156,314"/>
+          <path d="M160,314 L160,290 C160,282 172,282 172,290 L172,314"/>
+          <path d="M176,314 L176,290 C176,282 188,282 188,290 L188,314"/>
+        </g>
+        <text class="cardtext city" x="150" y="376">ROME</text>
+        <line x1="118" y1="390" x2="182" y2="390" class="s-ink"/>
+      </svg>
+      <figcaption class="cap"><span>Рим</span><span id="tRm">--:--</span></figcaption>
+    </figure>
+    <figure class="postcard">
+      <svg viewBox="0 0 300 400" aria-label="Стамбул">
+        <rect class="f-ist" width="300" height="400"/>
+        <rect class="keyline" x="10" y="10" width="280" height="380"/>
+        <text class="cardtext country" x="150" y="44">TURKEY</text>
+        <text class="cardtext num" x="270" y="44">08</text>
+        <g class="s-ink">
+          <line x1="70" y1="320" x2="230" y2="320"/>
+          <rect x="96" y="282" width="108" height="38"/>
+          <path d="M96,282 C96,258 138,258 138,282"/>
+          <path d="M162,282 C162,258 204,258 204,282"/>
+          <path d="M118,262 C118,222 182,222 182,262"/>
+          <line x1="118" y1="262" x2="182" y2="262"/>
+          <line x1="150" y1="228" x2="150" y2="216"/>
+          <circle cx="150" cy="213" r="3"/>
+          <line x1="82" y1="196" x2="82" y2="320"/>
+          <polygon points="82,176 76,196 88,196"/>
+          <line x1="78" y1="240" x2="86" y2="240"/>
+          <line x1="218" y1="196" x2="218" y2="320"/>
+          <polygon points="218,176 212,196 224,196"/>
+          <line x1="214" y1="240" x2="222" y2="240"/>
+        </g>
+        <g class="s-thin">
+          <line x1="120" y1="296" x2="120" y2="312"/>
+          <line x1="150" y1="296" x2="150" y2="312"/>
+          <line x1="180" y1="296" x2="180" y2="312"/>
+        </g>
+        <text class="cardtext city" x="150" y="376">ISTANBUL</text>
+        <line x1="118" y1="390" x2="182" y2="390" class="s-ink"/>
+      </svg>
+      <figcaption class="cap"><span>Стамбул</span><span id="tIs">--:--</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<footer>
+  <h2>Написать письмо</h2>
+  <p>Есть идея для постера или целой серии? Расскажите — отвечу в течение дня.</p>
+  <button class="mail" id="mailBtn" type="button" aria-live="polite">
+    <span class="mail-addr">unhappykin@gmail.com</span>
+    <span class="mail-hint" id="mailHint">— нажмите, чтобы скопировать</span>
+  </button>
+  <p class="addr">или выделите адрес вручную: unhappykin@gmail.com</p>
+  <p>А если в Лондоне ровно 17:00 — откладываю всё и завариваю чай: письмо, отправленное в этот час, получит ответ с чаем.</p>
+  <small>© 2026 · Five o'clock · серия из восьми открыток</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
