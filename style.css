@@ -88,6 +88,10 @@ h2{font-size:2rem;margin-bottom:1rem}
 .postcard svg{display:block;width:100%;height:auto}
 .cap{display:flex;justify-content:space-between;padding:.7rem 1rem;font-size:1.15rem}
 
+/* плавное появление при скролле */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
 /* подвал */
 footer{background:var(--ink);color:var(--paper);padding:5rem 8vw 3rem;
   clip-path:polygon(0 12%,100% 0,100% 100%,0 100%)}
@@ -110,4 +114,5 @@ footer small{display:block;margin-top:2.5rem;opacity:.7}
   section{padding:1rem}
   .works{grid-template-columns:repeat(4,1fr);gap:1rem}
   .postcard{transform:none;break-inside:avoid;border-width:2px}
+  .fade-in{opacity:1;transform:none}
 }

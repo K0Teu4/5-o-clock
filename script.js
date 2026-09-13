@@ -50,3 +50,14 @@ mailBtn.onclick = async () => {
   }
   setTimeout(() => { mailHint.textContent = HINT; }, 2500);
 };
+
+/* плавное появление открыток при прокрутке */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.15});
+document.querySelectorAll('.postcard.fade-in').forEach(el => io.observe(el));
