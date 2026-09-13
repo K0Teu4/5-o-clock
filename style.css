@@ -57,7 +57,7 @@ html[data-phase="night"] .wl{fill:#221E4E}
 .cap{font-family:Georgia,serif}
 
 /* первый экран */
-.hero{position:relative;height:100vh;overflow:hidden;background:var(--sky)}
+.hero{position:relative;height:100vh;height:100svh;overflow:hidden;background:var(--sky)}
 .hero>svg{position:absolute;inset:0;width:100%;height:100%}
 .hero-txt{position:absolute;left:6vw;bottom:9vh;max-width:min(560px,46vw);
   background:var(--a);color:var(--on-a);padding:1.2rem 1.8rem;
@@ -69,7 +69,7 @@ html[data-phase="night"] .wl{fill:#221E4E}
   max-width:90vw;text-align:center}
 body.tea #tea{display:block}
 
-/* открытки: четыре в ряд */
+/* открытки */
 section{padding:5rem 8vw}
 h2{font-size:2rem;margin-bottom:1rem}
 .lead{margin-bottom:2.5rem}
@@ -84,7 +84,6 @@ h2{font-size:2rem;margin-bottom:1rem}
 .postcard:nth-child(6){transform:rotate(.8deg)}
 .postcard:nth-child(7){transform:rotate(-.8deg)}
 .postcard:nth-child(8){transform:rotate(1.4deg)}
-.postcard:hover{transform:rotate(0deg) translateY(-6px)}
 .postcard svg{display:block;width:100%;height:auto}
 .cap{display:flex;justify-content:space-between;padding:.7rem 1rem;font-size:1.15rem}
 
@@ -100,12 +99,40 @@ footer p{max-width:60ch;margin:.4rem 0}
   background:var(--red);color:var(--paper);font-size:1.2rem;font-family:Georgia,serif;
   border:none;cursor:pointer;clip-path:polygon(0 12%,100% 0,100% 88%,0 100%);
   transition:transform .15s, background .3s}
-.mail:hover{background:#F26A4B;transform:translateY(-2px)}
 .mail:active{transform:translateY(0)}
 .mail:focus-visible{outline:3px solid var(--paper);outline-offset:4px}
 .mail-hint{font-size:.95rem;opacity:.85}
 .addr{opacity:.75;font-size:.95rem}
 footer small{display:block;margin-top:2.5rem;opacity:.7}
+
+/* hover только там, где есть курсор: на таче подъём карточки не залипает */
+@media (hover:hover){
+  .postcard:hover{transform:rotate(0deg) translateY(-6px)}
+  .mail:hover{background:#F26A4B;transform:translateY(-2px)}
+}
+
+/* телефон: постер колонкой, диск фазы возвращён, типографика и отступы поджаты */
+@media (max-width:700px){
+  .hero{height:auto;min-height:100svh;display:flex;flex-direction:column}
+  .hero>svg{position:relative;inset:auto;flex:none;height:56vh}
+  .hero::after{content:"";position:absolute;top:5vh;right:7vw;width:16vw;height:16vw;
+    min-width:64px;min-height:64px;border-radius:50%;background:var(--disc);
+    transition:background .8s;pointer-events:none}
+  .hero-txt{position:static;max-width:none;margin:-7vh 5vw 4vh;padding:1rem 1.2rem;
+    clip-path:polygon(0 4%,100% 0,100% 96%,0 100%)}
+  .hero-txt h1{font-size:2.2rem}
+  .hero-txt p{font-size:.95rem}
+  section{padding:3.5rem 6vw}
+  h2{font-size:1.6rem}
+  .lead{font-size:1rem;margin-bottom:1.8rem}
+  .works{gap:1.6rem}
+  .cap{font-size:1.05rem;padding:.6rem .9rem}
+  #tea{left:5vw;right:5vw;transform:none;max-width:none;font-size:.95rem;padding:.7rem 1rem}
+  footer{padding:3.5rem 6vw 2.5rem}
+  footer h2{font-size:1.5rem}
+  .mail{width:100%;justify-content:center;flex-wrap:wrap;font-size:1.05rem;padding:.9rem 1rem}
+  .addr{font-size:.9rem}
+}
 
 /* печать: лист открыток */
 @media print{
@@ -117,4 +144,4 @@ footer small{display:block;margin-top:2.5rem;opacity:.7}
   .fade-in{opacity:1;transform:none}
 }
 
-/* ── финальное издание · коллекция заморожена 13.09.2026 ── */
+/* ── финальное издание · коллекция заморожена 13.09.2026 · мобильная забота добавлена сверх заморозки ── */
